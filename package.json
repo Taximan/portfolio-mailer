@@ -1,0 +1,23 @@
+{
+  "name": "portfolio-mailer",
+  "version": "0.1.0",
+  "description": "mailing service for my portfolio page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dawid C.",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "express": "^4.13.4",
+    "lodash": "^4.3.0",
+    "merge": "^1.2.0",
+    "nodemailer": "^2.1.0",
+    "validator": "^4.8.0",
+    "body-parser": "^1.15.0"
+  },
+  "engines": {
+    "node": "5.x"
+  }
+}
