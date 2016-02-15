@@ -22,9 +22,9 @@ var config = {
 // show env variables on bootstrap
 Object.keys(config.mail).forEach(k => {
 	if (k === 'pass' && config.mail.pass) { // mask pasword
-		console.log(pad(k, 8) + '=> ' + config.mail[k].split('').map(_ => '*').join(''));
+		console.log(pad(k, 8) + chalk.red('=> ') + config.mail[k].split('').map(_ => '*').join(''));
 	} else {
-		console.log(pad(k, 8) + '=> ' + config.mail[k]);		
+		console.log(pad(k, 8) + chalk.red('=> ') + config.mail[k]);		
 	}
 });	
 
