@@ -32,6 +32,13 @@ var transporter = nodemailer.createTransport('smtps://' + config.mail.name + '%4
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'example.com');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,HEAD');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
+
 app.get('/sendmail', function (req, res) {
   res.sendStatus(200);
 });
