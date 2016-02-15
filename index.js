@@ -60,7 +60,7 @@ app.post('/sendmail', function (req, res) {
 
 	var mailOptions = {
 		from: author,
-		to: config.sendTo,
+		to: config.mail.sendTo,
 		subject: 'mail from portfolio #' + mailTimeStamp,
 		text: body.message + '\n\n\n\ -------\n ' + author
 	};
@@ -92,7 +92,7 @@ app.post('/sendmail', function (req, res) {
 					console.log(error);
 					res.status(500).send({message: 'something went wrong >.<'});
 				}
-				
+
 			}		
 		);
 
