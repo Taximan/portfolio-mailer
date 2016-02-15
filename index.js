@@ -82,8 +82,17 @@ app.post('/sendmail', function (req, res) {
 					console.log(err);
 					throw err;
 				}
-				console.log(chalk.green('mail ' + mailTimeStamp + 'sent with success!'));
-				res.status(201).send({message: 'mail sent successfully'});
+				
+				if(!error) {
+					console.log(chalk.green('mail ' + mailTimeStamp + 'sent with success!'));
+					res.status(201).send({message: 'mail sent successfully'});
+				} 
+
+				else {
+					console.log(error);
+					res.status(500).send({message: 'something went wrong >.<'});
+				}
+				
 			}		
 		);
 
