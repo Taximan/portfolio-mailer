@@ -9,13 +9,14 @@
   "author": "Dawid C.",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "chalk": "^1.1.1",
     "express": "^4.13.4",
     "lodash": "^4.3.0",
     "merge": "^1.2.0",
     "nodemailer": "^2.1.0",
-    "validator": "^4.8.0",
-    "body-parser": "^1.15.0"
+    "pad": "^1.0.0",
+    "validator": "^4.8.0"
   },
   "engines": {
     "node": "5.x"

@@ -6,6 +6,7 @@ var merge = require('merge');
 var chalk = require('chalk');
 var app = require('express')();
 var bodyParser = require('body-parser');
+var pad = require('pad');
 
 var config = {
 	mail: {
@@ -17,6 +18,15 @@ var config = {
 	},
 
 }
+
+// show env variables on bootstrap
+Object.keys(config.mail).forEach(k => {
+	if (k === 'pass' && config.mail.pass) { // mask pasword
+		console.log(pad(k, 8) + '=> ' + config.mail[k].split('').map(_ => '*').join(''));
+	} else {
+		console.log(pad(k, 8) + '=> ' + config.mail[k]);		
+	}
+});	
 
 var transporter = nodemailer.createTransport('smtps://' + config.mail.name + '%40' + config.mail.host + ':' + config.mail.pass + '@' + config.mail.serv);
 
