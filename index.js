@@ -16,8 +16,7 @@ var config = {
 		serv: process.env.SERVER,
 		sendTo: process.env.SENDTO
 	},
-
-}
+};
 
 // show env variables on bootstrap
 Object.keys(config.mail).forEach(k => {
